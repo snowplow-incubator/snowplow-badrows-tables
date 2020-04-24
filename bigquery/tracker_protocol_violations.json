@@ -1,0 +1,154 @@
+{
+  "ignoreUnknownValues": true,
+  "sourceFormat": "NEWLINE_DELIMITED_JSON",
+  "sourceUris": [
+    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.tracker_protocol_violations/*"
+  ],
+  "schema": {
+    "fields": [
+      {
+        "name": "schema",
+        "type": "STRING"
+      },
+      {
+        "name": "data",
+        "type": "RECORD",
+        "fields": [
+          {
+            "name": "failure",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "timestamp",
+                "type": "TIMESTAMP"
+              },
+              {
+                "name": "vendor",
+                "type": "STRING"
+              },
+              {
+                "name": "version",
+                "type": "STRING"
+              },
+              {
+                "name": "messages",
+                "type": "RECORD",
+                "fields": [
+                  {
+                    "name": "field",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "value",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "expectation",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "schemaKey",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "schemaCriterion",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "REPEATED"
+              }
+            ]
+          },
+          {
+            "name": "payload",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "vendor",
+                "type": "STRING"
+              },
+              {
+                "name": "version",
+                "type": "STRING"
+              },
+              {
+                "name": "querystring",
+                "type": "RECORD",
+                "fields": [
+                  {
+                    "name": "name",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "REPEATED"
+              },
+              {
+                "name": "contentType",
+                "type": "STRING"
+              },
+              {
+                "name": "body",
+                "type": "STRING"
+              },
+              {
+                "name": "collector",
+                "type": "STRING"
+              },
+              {
+                "name": "encoding",
+                "type": "STRING"
+              },
+              {
+                "name": "hostname",
+                "type": "STRING"
+              },
+              {
+                "name": "timestamp",
+                "type": "TIMESTAMP"
+              },
+              {
+                "name": "ipAddress",
+                "type": "STRING"
+              },
+              {
+                "name": "useragent",
+                "type": "STRING"
+              },
+              {
+                "name": "refererUri",
+                "type": "STRING"
+              },
+              {
+                "name": "headers",
+                "type": "STRING",
+                "mode": "REPEATED"
+              },
+              {
+                "name": "networkUserId",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "processor",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "artifact",
+                "type": "STRING"
+              },
+              {
+                "name": "version",
+                "type": "STRING"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

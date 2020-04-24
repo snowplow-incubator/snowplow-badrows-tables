@@ -1,0 +1,61 @@
+{
+  "ignoreUnknownValues": true,
+  "sourceFormat": "NEWLINE_DELIMITED_JSON",
+  "sourceUris": [
+    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.size_violation/*"
+  ],
+  "schema": {
+    "fields": [
+      {
+        "name": "schema",
+        "type": "STRING"
+      },
+      {
+        "name": "data",
+        "type": "RECORD",
+        "fields": [
+          {
+            "name": "failure",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "timestamp",
+                "type": "TIMESTAMP"
+              },
+              {
+                "name": "maximumAllowedSizeBytes",
+                "type": "INT64"
+              },
+              {
+                "name": "actualSizeBytes",
+                "type": "INT64"
+              },
+              {
+                "name": "expectation",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "payload",
+            "type": "STRING"
+          },
+          {
+            "name": "processor",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "artifact",
+                "type": "STRING"
+              },
+              {
+                "name": "version",
+                "type": "STRING"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

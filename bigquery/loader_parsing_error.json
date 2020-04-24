@@ -1,0 +1,68 @@
+{
+  "ignoreUnknownValues": true,
+  "sourceFormat": "NEWLINE_DELIMITED_JSON",
+  "sourceUris": [
+    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.loader_parsing_error/*"
+  ],
+  "schema": {
+    "fields": [
+      {
+        "name": "schema",
+        "type": "STRING"
+      },
+      {
+        "name": "data",
+        "type": "RECORD",
+        "fields": [
+          {
+            "name": "payload",
+            "type": "STRING"
+          },
+          {
+            "name": "failure",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "fieldCount",
+                "type": "INT64"
+              },
+              {
+                "name": "errors",
+                "type": "RECORD",
+                "fields": [
+                  {
+                    "name": "key",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "value",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "message",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "REPEATED"
+              }
+            ]
+          },
+          {
+            "name": "processor",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "artifact",
+                "type": "STRING"
+              },
+              {
+                "name": "version",
+                "type": "STRING"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
