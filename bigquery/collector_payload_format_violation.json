@@ -1,0 +1,75 @@
+{
+  "ignoreUnknownValues": true,
+  "sourceFormat": "NEWLINE_DELIMITED_JSON",
+  "sourceUris": [
+    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.collector_payload_format_violation/*"
+  ],
+  "schema": {
+    "fields": [
+      {
+        "name": "schema",
+        "type": "STRING"
+      },
+      {
+        "name": "data",
+        "type": "RECORD",
+        "fields": [
+          {
+            "name": "failure",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "timestamp",
+                "type": "TIMESTAMP"
+              },
+              {
+                "name": "loader",
+                "type": "STRING"
+              },
+              {
+                "name": "message",
+                "type": "RECORD",
+                "fields": [
+                  {
+                    "name": "error",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "payloadField",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "value",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "expectation",
+                    "type": "STRING"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "payload",
+            "type": "STRING"
+          },
+          {
+            "name": "processor",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "artifact",
+                "type": "STRING"
+              },
+              {
+                "name": "version",
+                "type": "STRING"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
