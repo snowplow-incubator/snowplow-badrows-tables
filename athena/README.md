@@ -32,7 +32,6 @@ Now run each sql statement in turn by copying them into the Athena query editor.
 | [relay_failure.sql](relay_failure.sql) | [relay_failure 1-0-0] |
 | [schema_violations.sql](schema_violations.sql) | [schema_violations 1-0-0] |
 | [size_violation.sql](size_violation.sql) | [size_violation 1-0-0] |
-| [snowflake_error.sql](snowflake_error.sql) | [snowflake_error 1-0-0] |
 | [tracker_protocol_violations.sql](tracker_protocol_violations.sql) | [tracker_protocol_violations 1-0-0] |
 
 ### Example usage of tables
@@ -83,5 +82,4 @@ LIMIT 10
 [relay_failure 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/relay_failure/jsonschema/1-0-0
 [schema_violations 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/1-0-0
 [size_violation 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/size_violation/jsonschema/1-0-0
-[snowflake_error 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/snowflake_error/jsonschema/1-0-0
 [tracker_protocol_violations 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/tracker_protocol_violations/jsonschema/1-0-0
