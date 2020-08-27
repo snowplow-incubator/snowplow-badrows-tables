@@ -84,6 +84,21 @@
                     "type": "STRING"
                   },
                   {
+                    "name": "parameters",
+                    "type": "RECORD",
+                    "fields": [
+                      {
+                        "name": "name",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED"
+                  },
+                  {
                     "name": "contentType",
                     "type": "STRING"
                   },
