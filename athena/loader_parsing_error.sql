@@ -1,20 +1,20 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS {{ DATABASE }}.loader_parsing_error (
-  schema string,
-  data struct<
-    payload: STRING,
-    failure: struct<
-      type: string,
-      fieldCount: INT,
-      errors: array<struct<
-        type: string,
-        key: STRING,
-        value: STRING,
-        message: STRING
+  `schema` string,
+  `data` struct<
+    `payload`: STRING,
+    `failure`: struct<
+      `type`: STRING,
+      `fieldCount`: INT,
+      `errors`: array<struct<
+        `type`: STRING,
+        `key`: STRING,
+        `value`: STRING,
+        `message`: STRING
       >>
     >,
-    processor: struct<
-      artifact: STRING,
-      version: STRING
+    `processor`: struct<
+      `artifact`: STRING,
+      `version`: STRING
     >
   >
 )

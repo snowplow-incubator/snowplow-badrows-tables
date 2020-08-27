@@ -27,6 +27,10 @@
                 "type": "RECORD",
                 "fields": [
                   {
+                    "name": "error",
+                    "type": "STRING"
+                  },
+                  {
                     "name": "lookupHistory",
                     "type": "RECORD",
                     "fields": [
@@ -38,6 +42,10 @@
                         "name": "errors",
                         "type": "RECORD",
                         "fields": [
+                          {
+                            "name": "error",
+                            "type": "STRING"
+                          },
                           {
                             "name": "message",
                             "type": "STRING"

@@ -23,6 +23,10 @@
             "type": "RECORD",
             "fields": [
               {
+                "name": "type",
+                "type": "STRING"
+              },
+              {
                 "name": "fieldCount",
                 "type": "INT64"
               },
@@ -30,6 +34,10 @@
                 "name": "errors",
                 "type": "RECORD",
                 "fields": [
+                  {
+                    "name": "type",
+                    "type": "STRING"
+                  },
                   {
                     "name": "key",
                     "type": "STRING"
