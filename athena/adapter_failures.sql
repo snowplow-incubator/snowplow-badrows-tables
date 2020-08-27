@@ -1,42 +1,42 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS {{ DATABASE }}.adapter_failures (
-  schema string,
-  data struct<
-    failure: struct<
-      timestamp: STRING,
-      vendor: STRING,
-      version: STRING,
-      messages: array<struct<
-        field: STRING,
-        value: STRING,
-        expectation: STRING,
-        error: STRING,
-        json: string,
-        actual: STRING,
-        expectedMapping: string
+  `schema` string,
+  `data` struct<
+    `failure`: struct<
+      `timestamp`: STRING,
+      `vendor`: STRING,
+      `version`: STRING,
+      `messages`: array<struct<
+        `field`: STRING,
+        `value`: STRING,
+        `expectation`: STRING,
+        `error`: STRING,
+        `json`: STRING,
+        `actual`: STRING,
+        `expectedMapping`: STRING
       >>
     >,
-    payload: struct<
-      vendor: STRING,
-      version: STRING,
-      querystring: array<struct<
-        name: STRING,
-        value: STRING
+    `payload`: struct<
+      `vendor`: STRING,
+      `version`: STRING,
+      `querystring`: array<struct<
+        `name`: STRING,
+        `value`: STRING
       >>,
-      contentType: STRING,
-      body: STRING,
-      collector: STRING,
-      encoding: STRING,
-      hostname: STRING,
-      timestamp: STRING,
-      ipAddress: STRING,
-      useragent: STRING,
-      refererUri: STRING,
-      headers: array<STRING>,
-      networkUserId: STRING
+      `contentType`: STRING,
+      `body`: STRING,
+      `collector`: STRING,
+      `encoding`: STRING,
+      `hostname`: STRING,
+      `timestamp`: STRING,
+      `ipAddress`: STRING,
+      `useragent`: STRING,
+      `refererUri`: STRING,
+      `headers`: array<STRING>,
+      `networkUserId`: STRING
     >,
-    processor: struct<
-      artifact: STRING,
-      version: STRING
+    `processor`: struct<
+      `artifact`: STRING,
+      `version`: STRING
     >
   >
 )
