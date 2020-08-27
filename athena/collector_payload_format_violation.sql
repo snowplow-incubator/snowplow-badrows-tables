@@ -1,20 +1,20 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS {{ DATABASE }}.collector_payload_format_violation (
-  schema string,
-  data struct<
-    failure: struct<
-      timestamp: STRING,
-      loader: STRING,
-      message: struct<
-        error: STRING,
-        payloadField: STRING,
-        value: STRING,
-        expectation: STRING
+  `schema` string,
+  `data` struct<
+    `failure`: struct<
+      `timestamp`: STRING,
+      `loader`: STRING,
+      `message`: struct<
+        `error`: STRING,
+        `payloadField`: STRING,
+        `value`: STRING,
+        `expectation`: STRING
       >
     >,
-    payload: STRING,
-    processor: struct<
-      artifact: STRING,
-      version: STRING
+    `payload`: STRING,
+    `processor`: struct<
+      `artifact`: STRING,
+      `version`: STRING
     >
   >
 )

@@ -1,17 +1,17 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS {{ DATABASE }}.loader_recovery_error (
-  schema string,
-  data struct<
-    payload: STRING,
-    failure: struct<
-      error: struct<
-        message: STRING,
-        location: string,
-        reason: STRING
+  `schema` string,
+  `data` struct<
+    `payload`: STRING,
+    `failure`: struct<
+      `error`: struct<
+        `message`: STRING,
+        `location`: STRING,
+        `reason`: STRING
       >
     >,
-    processor: struct<
-      artifact: STRING,
-      version: STRING
+    `processor`: struct<
+      `artifact`: STRING,
+      `version`: STRING
     >
   >
 )
