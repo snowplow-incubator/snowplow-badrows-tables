@@ -1,0 +1,22 @@
+VERSION 1.0.0 (2020-09-04)
+--------------------------
+Compatible with the recommended stack on day of release:
+- Stream Collector v1.0.1
+- Enrich v1.3.1
+- ElasticSearch Loader v1.0.0
+- RDB Loader R32
+- BigQuery Loader v0.5.1
+
+Included schemas and versions:
+- adapter_failures 1-0-0
+- collector_payload_format_violation 1-0-0
+- enrichment_failures 2-0-0
+- loader_iglu_error 2-0-0
+- loader_parsing_error 2-0-0
+- loader_recovery_error 1-0-0
+- loader_runtime_error 1-0-1
+- relay_failure 1-0-0
+- schema_violations 2-0-0
+- size_violation 1-0-0
+- tracker_protocol_violations 1-0-0
+
