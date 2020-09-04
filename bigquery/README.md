@@ -3,6 +3,21 @@
 This directory contains sql statements for creating tables in [BigQuery][bigquery home] based on Snowplow's structured bad rows formats.
 You should create a separate table for each of Snowplow's [different bad row schemas][all badrow schemas].
 
+## Missing fields :warning:
+
+**The following fields are missing from the bigquery table definitions:**
+
+- Enrichment failures: `data.failure.message.error`
+- Loader iglu error: `data.failure.dataReports.targets`
+- Loader recovery error: `data.failure.error.location`
+- Schema violations: `data.failure.messages.error`
+- Tracker protocol violations: `data.failure.messages.error`
+
+
+We have omitted fields from the table definitions if they are "polymorphic", e.g. where they can be a string or an object depending on the context.
+Unfortunately this makes the fields inaccessible in bigquery.  This problem will be fixed in future versions of Snowplow, by removing polymorphic fields
+(see issues in [snowplow-badrows](https://github.com/snowplow-incubator/snowplow-badrows/issues/50) and [iglu-central](https://github.com/snowplow/iglu-central/issues/1075)).
+
 ## Create tables
 
 These instructions make use of the [bq command-line tool][bq docs] which is packaged with the [google cloud sdk][sdk docs].
