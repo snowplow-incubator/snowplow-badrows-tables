@@ -150,6 +150,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS {{ DATABASE }}.relay_failure (
     >
   >
 )
+PARTITIONED BY (date string)
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 STORED AS TEXTFILE
 LOCATION 's3://{{ BUCKET }}/{{ PIPELINE }}/partitioned/com.snowplowanalytics.snowplow.badrows.relay_failure'
