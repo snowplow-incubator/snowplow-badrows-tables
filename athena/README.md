@@ -56,13 +56,15 @@ GROUP BY data.payload.enriched.app_id
 You can do a deeper dive into the error messages to get a explanation of the last 10 failures:
 
 ```sql
-SELECT data.failure.messages[1].field AS field,
-       data.failure.messages[1].value AS value,
-       data.failure.messages[1].error AS error,
-       data.failure.messages[1].json AS json,
-       data.failure.messages[1].schemaKey AS schemaKey,
-       data.failure.messages[1].schemaCriterion AS schemaCriterion
+SELECT 
+       message.field AS field,
+       message.value AS value,
+       message.error AS error,
+       message.json AS json,
+       message.schemaKey AS schemaKey,
+       message.schemaCriterion AS schemaCriterion
 FROM schema_violations
+CROSS JOIN UNNEST(data.failure.messages) AS t(message)
 ORDER BY data.failure.timestamp DESC
 LIMIT 10
 ```
