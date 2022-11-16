@@ -2,7 +2,7 @@
   "ignoreUnknownValues": true,
   "sourceFormat": "NEWLINE_DELIMITED_JSON",
   "sourceUris": [
-    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.enrichment_failures/*"
+    "gs://sp-storage-loader-bad-prod1-no_nrk/partitioned/com.snowplowanalytics.snowplow.badrows.enrichment_failures/*"
   ],
   "schema": {
     "fields": [
@@ -51,6 +51,10 @@
                       {
                         "name": "value",
                         "type": "STRING"
+                      },
+                      {
+                        "name": "error",
+                        "type": "JSON"
                       },
                       {
                         "name": "expectation",

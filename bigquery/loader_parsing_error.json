@@ -2,7 +2,7 @@
   "ignoreUnknownValues": true,
   "sourceFormat": "NEWLINE_DELIMITED_JSON",
   "sourceUris": [
-    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.loader_parsing_error/*"
+    "gs://sp-storage-loader-bad-prod1-no_nrk/partitioned/com.snowplowanalytics.snowplow.badrows.loader_parsing_error/*"
   ],
   "schema": {
     "fields": [

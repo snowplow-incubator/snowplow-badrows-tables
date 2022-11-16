@@ -2,7 +2,7 @@
   "ignoreUnknownValues": true,
   "sourceFormat": "NEWLINE_DELIMITED_JSON",
   "sourceUris": [
-    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.schema_violations/*"
+    "gs://sp-storage-loader-bad-prod1-no_nrk/partitioned/com.snowplowanalytics.snowplow.badrows.schema_violations/*"
   ],
   "schema": {
     "fields": [
@@ -37,6 +37,10 @@
                   {
                     "name": "schemaKey",
                     "type": "STRING"
+                  },
+                  {
+                    "name": "error",
+                    "type": "JSON"
                   },
                   {
                     "name": "schemaCriterion",

@@ -2,7 +2,7 @@
   "ignoreUnknownValues": true,
   "sourceFormat": "NEWLINE_DELIMITED_JSON",
   "sourceUris": [
-    "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.loader_iglu_error/*"
+    "gs://sp-storage-loader-bad-prod1-no_nrk/partitioned/com.snowplowanalytics.snowplow.badrows.loader_iglu_error/*"
   ],
   "schema": {
     "fields": [
@@ -79,6 +79,10 @@
                       {
                         "name": "keyword",
                         "type": "STRING"
+                      },
+                      {
+                        "name": "targets",
+                        "type": "JSON"
                       }
                     ],
                     "mode": "REPEATED"
