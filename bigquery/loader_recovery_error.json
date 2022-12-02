@@ -33,6 +33,10 @@
                   {
                     "name": "reason",
                     "type": "STRING"
+                  },
+                  {
+                    "name": "location",
+                    "type": "JSON"
                   }
                 ]
               }

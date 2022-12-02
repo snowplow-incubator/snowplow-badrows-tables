@@ -41,6 +41,10 @@
                   {
                     "name": "schemaCriterion",
                     "type": "STRING"
+                  },
+                  {
+                    "name": "error",
+                    "type": "JSON"
                   }
                 ],
                 "mode": "REPEATED"
