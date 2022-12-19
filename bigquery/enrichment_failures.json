@@ -59,6 +59,10 @@
                       {
                         "name": "schemaKey",
                         "type": "STRING"
+                      },
+                      {
+                        "name": "error",
+                        "type": "JSON"
                       }
                     ]
                   }

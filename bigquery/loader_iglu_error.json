@@ -79,6 +79,10 @@
                       {
                         "name": "keyword",
                         "type": "STRING"
+                      },
+                      {
+                        "name": "targets",
+                        "type": "JSON"
                       }
                     ],
                     "mode": "REPEATED"
