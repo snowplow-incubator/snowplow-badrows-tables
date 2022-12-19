@@ -18,6 +18,13 @@ The sql statements in this repo contain a few placeholders which you will need t
 
 Now run each sql statement in turn by copying them into the Athena query editor.
 
+Since tables are partioned by date, partitions for every table need to be loaded before querying. To load partitions, run following sql statement for every table:
+```sql
+MSCK REPAIR TABLE {{ TABLENAME }}
+```
+
+For more information about partitioning in Athena, please follow [Athena partitioning documentation][athena-partition].
+
 ![Athena create table](https://github.com/snowplow-incubator/snowplow-badrows-tables/wiki/images/athena-create-table.png)
 
 | Athena create statement | Corresponding bad rows JSON schema |
@@ -85,3 +92,4 @@ LIMIT 10
 [schema_violations 2-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/2-0-0
 [size_violation 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/size_violation/jsonschema/1-0-0
 [tracker_protocol_violations 1-0-0]: https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.snowplow.badrows/tracker_protocol_violations/jsonschema/1-0-0
+[athena-partition]: https://docs.aws.amazon.com/athena/latest/ug/partitions.html
