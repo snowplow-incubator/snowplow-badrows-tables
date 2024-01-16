@@ -1,0 +1,60 @@
+{
+    "ignoreUnknownValues": true,
+    "sourceFormat": "NEWLINE_DELIMITED_JSON",
+    "sourceUris": [
+      "gs://{{ BUCKET }}/partitioned/com.snowplowanalytics.snowplow.badrows.generic_error/*"
+    ],
+    "schema": {
+      "fields": [
+        {
+          "name": "schema",
+          "type": "STRING"
+        },
+        {
+          "fields": [
+            {
+              "description": "Information about the piece of software responsible for the creation of the bad row",
+              "fields": [
+                {
+                  "description": "Artifact responsible for the creation of the bad row",
+                  "name": "artifact",
+                  "type": "STRING"
+                },
+                {
+                  "description": "Version of the artifact responsible for the creation of the bad row",
+                  "name": "version",
+                  "type": "STRING"
+                }
+              ],
+              "name": "processor",
+              "type": "RECORD"
+            },
+            {
+              "description": "The stringified event for which there is a bad row",
+              "name": "payload",
+              "type": "STRING"
+            },
+            {
+              "fields": [
+                {
+                  "description": "Timestamp at which the failure occurred",
+                  "name": "timestamp",
+                  "type": "TIMESTAMP"
+                },
+                {
+                  "description": "Information about the issue",
+                  "mode": "REPEATED",
+                  "name": "errors",
+                  "type": "STRING"
+                }
+              ],
+              "name": "failure",
+              "type": "RECORD"
+            }
+          ],
+          "name": "data",
+          "type": "RECORD"
+        }
+      ]
+    }
+  }
